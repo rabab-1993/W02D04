@@ -13,6 +13,8 @@ heading.textContent = "To do list";
 let input = document.createElement("input");
 let bttn = document.createElement("button");
 bttn.textContent = "Add";
+input.className = "form-control"
+bttn.className = "btn btn-outline-secondary"
 
 // creat ul
 let ul = document.createElement("ul");
@@ -20,14 +22,21 @@ body1.append(heading, input, bttn, ul);
 
 // creat list
 let renderList = () => {
+    ul.innerHTML = ""
   for (let index = 0; index < todos.length; index++) {
     let list = document.createElement("li");
     list.textContent = `${todos[index]}`;
     ul.appendChild(list);
+// creat deleate bttn
     let deleteBttn = document.createElement("button");
     deleteBttn.textContent = "delete";
     deleteBttn.className = "del";
     list.append(deleteBttn);
+    // delete List Item
+    deleteBttn.addEventListener("click", (e) => {
+        let delLi = e.target
+        delLi.parentNode.remove()
+    })
 }
 };
 renderList();
@@ -40,12 +49,5 @@ let addToList = (on) => {
 
   renderList();
 };
-
- // delete List Item
- let deleteListItem = () => {
-    
-    
-  };
- 
 
 bttn.addEventListener("click", addToList);
