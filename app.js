@@ -2,7 +2,7 @@
 
 const body1 = document.querySelector("body");
 let todos = ["wake up", "eat breakfast", "code", "sleeping"];
-let delbtn = document.querySelector('.del');
+
 
 // creating h1
 
@@ -29,10 +29,10 @@ let renderList = () => {
     ul.appendChild(list);
 // creat deleate bttn
     let deleteBttn = document.createElement("button");
-    // deleteBttn.textContent = "delete";
+// deleteBttn.textContent = "delete";
     deleteBttn.className = "bi bi-trash-fill";
     list.append(deleteBttn);
-    // delete List Item
+ // delete List Item
     deleteBttn.addEventListener("click", (e) => {
         let delLi = e.target
         delLi.parentNode.remove()
