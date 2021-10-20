@@ -37,16 +37,27 @@ let renderList = () => {
         let delLi = e.target
         delLi.parentNode.remove()
     })
+// creat updated bttn
+let updateBttn = document.createElement("button");
+// deleteBttn.textContent = "delete";
+    updateBttn.className = "bi bi-arrow-repeat";
+    list.append(updateBttn);
+    updateBttn.addEventListener("click", (t) => {
+        let up = t.target;
+        // up.prompt("Please write here")
+        let promp = prompt("Please write here","hello")
+       todos.splice(up)
+
+    })
 }
 };
+console.log(todos);
 renderList();
 
 // addToList
 let addToList = (on) => {
   todos.push(input.value);
   input.value = "";
-  console.log(todos);
-
   renderList();
 };
 
