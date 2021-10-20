@@ -29,8 +29,8 @@ let renderList = () => {
     ul.appendChild(list);
 // creat deleate bttn
     let deleteBttn = document.createElement("button");
-    deleteBttn.textContent = "delete";
-    deleteBttn.className = "del";
+    // deleteBttn.textContent = "delete";
+    deleteBttn.className = "bi bi-trash-fill";
     list.append(deleteBttn);
     // delete List Item
     deleteBttn.addEventListener("click", (e) => {
